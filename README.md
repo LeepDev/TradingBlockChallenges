@@ -4,6 +4,14 @@
 [Miro Board](https://miro.com/app/board/uXjVNEHOQ70=/
 )
 
+## Trading Block Challenges
+* Displays landing page that allows user/client to access all 3 challenges
+* uses custom styling
+
+
+---
+
+
 ### Trading Block Challenge 1 Requirements
 * Build a webpage displaying 2 inputs
 * input 1 - a number that will be used in a square root formula
@@ -12,11 +20,32 @@
 ### Trading Block Challenge 1 MVP
 * A webpage built in react
 * meets input requirements and calculates without use of libraires (aka uses only basic math)
-* uses a front end framework for styling
+* test against this website (https://web2.0calc.com/)
 
 
 ---
 
+
+### Trading Block Challenge 2 Requirements
+* Build a webpage that displays prices of 3 stocks (MS, AAPL and AMZN).
+    * Morgan Stanely
+    * Apple
+    * Amazon
+* This webpage can generate the random small price changes with the following restrictions
+    * each price is rounded up to the nearest penny
+    * prices will vary withing these ranges (or use a delayed market data source)
+        * MS:    $70.00-90.00
+        * AAPL:  $170.00-220.00 
+        * AMZN:  $120.00-160.00
+* Prices should update frequently (at most one second)
+
+### Trading Block Challenge 2 MVP
+* A webpage built in react
+* meets requirements
+* updates freqently (at most one second)
+* BONUS: attach a delayed market data source
+
+---
 
 # Trading Block Challenge Prompts
 
