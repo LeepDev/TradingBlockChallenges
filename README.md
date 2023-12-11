@@ -4,7 +4,15 @@
 [Miro Board](https://miro.com/app/board/uXjVNEHOQ70=/
 )
 
+### Trading Block Challenge 1 Requirements
+* Build a webpage displaying 2 inputs
+* input 1 - a number that will be used in a square root formula
+* input 2 - a number for precision (how many decimal places you would want to go. Defaulted to 0 if no input is set). May choose to be a pull down or a button (+/-).
 
+### Trading Block Challenge 1 MVP
+* A webpage built in react
+* meets input requirements and calculates without use of libraires (aka uses only basic math)
+* uses a front end framework for styling
 
 
 ---
