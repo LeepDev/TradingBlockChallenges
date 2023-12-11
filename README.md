@@ -1,3 +1,17 @@
+# Trading Block Challenges
+
+## Useful Links
+[Miro Board](https://miro.com/app/board/uXjVNEHOQ70=/
+)
+
+
+
+
+---
+
+
+# Trading Block Challenge Prompts
+
 1. You should build a simple web page that takes client’s input as number and calculates square root of it with precision to n decimal places where client selects the precision (could be from a pull down menu or a button or in other way).  When calculating the square root, you should not use any function call, library, or a third party function but rather calculate it using only operations of +, -, *, and /. 
  
 
