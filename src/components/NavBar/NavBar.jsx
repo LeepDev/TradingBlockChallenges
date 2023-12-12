@@ -12,13 +12,19 @@ export default function NavBar ({user, setUser}) {
 
     return (
         <nav>
-            <Link to="/orders">Order History</Link>
+            <span>Welcome, {user.name}!</span>
             &nbsp; | &nbsp;
-            <Link to="/orders/new">New Order</Link>
+            <Link to="/">Home</Link>
+            &nbsp; | &nbsp;
+            <Link to="/Challenge1">Challenge 1</Link>
+            &nbsp; | &nbsp;
+            <Link to="/Challenge2">Challenge 2</Link>
+            &nbsp; | &nbsp;
+            <Link to="/Challenge2Bonus">Challenge 2 (Real Time Data)</Link>
+            &nbsp; | &nbsp;
+            <Link to="/Challenge3">Challenge 3</Link>
             &nbsp; | &nbsp;
             <Link to="" onClick={handleLogOut}>Log Out</Link>
-            &nbsp; | &nbsp;
-            <span>Welcome, {user.name}!</span>
         </nav>
     )
 }
