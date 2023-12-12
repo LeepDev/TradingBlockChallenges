@@ -1,5 +1,5 @@
 import * as fmpAPI from './fmp-api';
 
-export function getShortQuote(stock) {
-  return fmpAPI.getShortQuote(stock)
+export function getCurrentPrice(stock) {
+  return fmpAPI.getCurrentPrice(stock)
 }

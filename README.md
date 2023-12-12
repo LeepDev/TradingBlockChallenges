@@ -1,8 +1,11 @@
 # Trading Block Challenges
 
 ## Useful Links
+[Live Website](https://trading-block-challenges-2d51bd1413ca.herokuapp.com/)
 [Miro Board](https://miro.com/app/board/uXjVNEHOQ70=/
 )
+[Financial Modeling Prep Market Data Source](https://site.financialmodelingprep.com/developer)
+[Financial Modeling Prep Github for Node.js](https://github.com/patelneel55/financialmodelingprep)
 
 ## Trading Block Challenges
 * Displays landing page that allows user/client to access all 3 challenges
@@ -19,7 +22,7 @@
 
 ### Trading Block Challenge 1 MVP
 * A webpage built in react
-* meets input requirements and calculates without use of libraires (aka uses only basic math)
+* meets input requirements and calculates without use of libraries (aka uses only basic math)
 * test against this website (https://web2.0calc.com/)
 
 
@@ -28,7 +31,7 @@
 
 ### Trading Block Challenge 2 Requirements
 * Build a webpage that displays prices of 3 stocks (MS, AAPL and AMZN).
-    * Morgan Stanely
+    * Morgan Stanley
     * Apple
     * Amazon
 * This webpage can generate the random small price changes with the following restrictions
@@ -42,8 +45,28 @@
 ### Trading Block Challenge 2 MVP
 * A webpage built in react
 * meets requirements
-* updates freqently (at most one second)
+* updates frequently (at most one second)
 * BONUS: attach a delayed market data source
+    * using https://site.financialmodelingprep.com/developer
+
+
+---
+
+
+### Trading Block Challenge 3 Requirements
+* Build a webpage inspired by the styling of both of these websites
+    * www.tradingblock.com
+    * https://vt.tradingblock.com
+* Add in quoted prices on it
+* BONUS: use real market data
+    * https://site.financialmodelingprep.com/developer
+
+
+### Trading Block Challenge 3 MVP
+* A webpage built in react
+* meets styling requirements
+* inspires the next change withing Trading Block
+
 
 ---
 

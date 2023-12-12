@@ -3,6 +3,6 @@ const router = express.Router()
 const fmpCtrl = require('../../controllers/api/fmp')
 const ensureLoggedIn = require('../../config/ensureLoggedIn')
 
-router.get('/getShortQuote/:stock', ensureLoggedIn, fmpCtrl.getShortQuote)
+router.get('/getCurrentPrice/:stock', ensureLoggedIn, fmpCtrl.getCurrentPrice)
 
 module.exports = router
