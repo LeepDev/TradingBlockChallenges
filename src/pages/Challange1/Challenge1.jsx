@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 
 export default function Challenge1() {
     const inputRef = useRef(null);
-    const [sqNumber, setSQNumber] = useState(undefined)
+    const [sqNumber, setSQNumber] = useState('')
     const [decimal, setDecimal] = useState(2)
     const [answer, setAnswer] = useState("Please enter a number!")
     const [inputWidth, setInputWidth] = useState(null)
@@ -12,7 +12,7 @@ export default function Challenge1() {
     const clearInput = (event) => {
         if (event.keyCode === 8 || event.keyCode === 46) {
             event.target.value = null
-            setSQNumber(undefined)
+            setSQNumber('')
             setDecimal(2)
         } else if (event.keyCode === 107 || (event.keyCode === 187 && event.shiftKey)) {
             setDecimal(decimal + 1);
@@ -206,7 +206,16 @@ export default function Challenge1() {
     <div style={{width: '100vh', padding: '10vh'}} className="flex-ctr-ctr flex-col">
         <h1>Trading Block Challenge 1</h1>
 
-        <p>What is the square root of <input ref={inputRef} style={{ textAlign: 'right', height: '30px', width: inputWidth}} type="number" value={sqNumber} onKeyDown={clearInput} onChange={handleInputChangeSQ} />?</p>
+        <p>
+            What is the square root of 
+            <input ref={inputRef} style={{ textAlign: 'right', height: '30px', width: inputWidth}} type="number" value={sqNumber} onKeyDown={clearInput} onChange={handleInputChangeSQ} />?
+            <br />
+            <span style={{ color: 'black' }}>( Please clear using the delete or backspace key and enter a valid positive number.</span>
+            <br />
+            <span style={{ color: 'black' }}>Also feel free to use the +/- keys to increment and decrement the decimal place.</span>
+            <br />
+            <span style={{ color: 'black' }}>I.E. - 123, 123.12, 0.5, .34 )</span>
+        </p>
         <p>To which decimal place? <button onClick={handleInputChangeDecimalUp}>+</button><button onClick={handleInputChangeDecimalDown}>-</button></p>
         {
             sqNumber ? 
