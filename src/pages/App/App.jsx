@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import NavBar from '../../components/NavBar/NavBar';
 import { getUser } from '../../utilities/users-service';
 import ChallengeLP from '../ChallengeLandingPage/ChallengeLP';
@@ -11,9 +11,6 @@ import Challenge3 from '../Challange3/Challenge3';
 import Challenge2Bonus from '../Challange2Bonus/Challenge2Bonus';
 
 export default function App() {
-  const location = useLocation();
-  const pathnameSegments = location.pathname.split('/');
-  const endingPartOfRoute = pathnameSegments[pathnameSegments.length - 1];
 
   const [user, setUser] = useState(getUser())
 
@@ -21,12 +18,7 @@ export default function App() {
     <main className="App flex-ctr-ctr flex-col">
       { user ? 
         <>
-          {
-            endingPartOfRoute === "Challenge3" ? 
-              ''
-            :
-              <NavBar user={user} setUser={setUser} />
-          }
+          <NavBar user={user} setUser={setUser} />
           <Routes>
            <Route path="/" element={ <ChallengeLP/> } />
            <Route path="/Challenge1" element={ <Challenge1/> } />

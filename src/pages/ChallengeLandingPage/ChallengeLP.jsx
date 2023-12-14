@@ -1,7 +1,7 @@
 export default function ChallengeLP() {
     return (
     <div style={{width: '100vh', padding: '10vh'}} className="flex-ctr-ctr flex-col">
-        <h1>Trading Block Challenges</h1>
+        <h1>Trading Block Challenge Prompts</h1>
 
         <ol>
             <li>You should build a simple web page that takes client’s input as number and calculates square root of it with precision to n decimal places where client selects the precision (could

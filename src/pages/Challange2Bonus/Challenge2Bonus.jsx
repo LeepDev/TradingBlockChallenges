@@ -78,12 +78,12 @@ export default function Challenge2Bonus() {
     }
 
     return (
-    <div>
+    <div style={{width: '100vh', padding: '10vh'}} className="flex-ctr-ctr flex-col">
         <h1>Trading Block Challenge 2 (updating between 1-4 seconds)</h1>
 
-        <p>MS (Morgan Stanley): {msPrice}</p>
-        <p>APPL (Apple): {applPrice}</p>
-        <p>AMZN (Amazon): {amznPrice}</p>
+        <p>MS (Morgan Stanley): ${msPrice}</p>
+        <p>APPL (Apple): ${applPrice}</p>
+        <p>AMZN (Amazon): ${amznPrice}</p>
 
         <br/>
         <p>Refresh Count: {count}</p>

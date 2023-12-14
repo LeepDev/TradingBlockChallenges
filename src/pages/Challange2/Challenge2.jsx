@@ -8,7 +8,7 @@ export default function Challenge2() {
     const [count, setCount] = useState(0);
     const [refreshTimerId, setRefreshIdTimer] = useState(null)
     
-    const randomSeconds = 3000
+    const randomSeconds = 20000
 
     const updateCount = () => {
         setCount((count) => count + 1)
@@ -23,7 +23,7 @@ export default function Challenge2() {
 
         const updateTimerMS = () => {
             setCount(0)
-            const randomTime = Math.random() * randomSeconds + 1000;
+            const randomTime = Math.random() * randomSeconds;
             
             // Update the stocks
             let randomMS = Math.random() * (90.00-70.00);
@@ -37,7 +37,7 @@ export default function Challenge2() {
         };
         const updateTimerAPPL = () => {
             setCount(0)
-            const randomTime = Math.random() * randomSeconds + 1000;
+            const randomTime = Math.random() * randomSeconds;
             
             // Update the stocks
             let randomAPPL = Math.random() * (220.00-170.00);
@@ -51,7 +51,7 @@ export default function Challenge2() {
         };
         const updateTimerAMZN = () => {
             setCount(0)
-            const randomTime = Math.random() * randomSeconds + 1000;
+            const randomTime = Math.random() * randomSeconds;
             
             // Update the stocks
             let randomAMZN = Math.random() * (220.00-170.00);
@@ -81,8 +81,8 @@ export default function Challenge2() {
         const formattedTime = currentTime.toLocaleTimeString();
 
     return (
-    <div>
-        <h1>Trading Block Challenge 2 (updating between 1-4 seconds)</h1>
+    <div style={{width: '100vh', padding: '10vh'}} className="flex-ctr-ctr flex-col">
+        <h1>Trading Block Challenge 2</h1>
 
         <p>MS (Morgan Stanley): ${msPrice}</p>
         <p>APPL (Apple): ${applPrice}</p>
