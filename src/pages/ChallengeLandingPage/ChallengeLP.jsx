@@ -15,7 +15,7 @@ export default function ChallengeLP() {
                 You are to build a demo web page that could display prices of three stocks:  MS, AAPL, and AMZN.  You may know them as Morgan Stanley, Apple, and Amazon, respectively.  The web page could either generate the random small price changes with the following restrictions: Each price will be rounded to the penny (0.01); prices shall vary within a range as follows, or use a delayed market data source if available (this requires a little bit more knowledge):
                 <br/>
                 <br/>
-                <ol type="i">
+                <ol type="i" style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
                     <li>MS:  between 70 and 90.00</li>
                     <li>AAPL:  between 170.00 and 220.00</li>
                     <li>AMZN:  between 120.00 and 160.00</li>

@@ -5,11 +5,11 @@ export default function Challenge1() {
     const [sqNumber, setSQNumber] = useState(0)
     const [decimal, setDecimal] = useState(0)
     const [answer, setAnswer] = useState(0)
-    const [inputWidth, setInputWidth] = useState('70px')
+    const [inputWidth, setInputWidth] = useState('40px')
     
     const handleInputChangeSQ = (event) => {
         const value = event.target.value;
-        const regex = /^\d*\.?\d*$/;
+        const regex = /^(?!0\d)(\d+(\.\d*)?|0\.\d+)$/;
       
         if (regex.test(value)) {
             setSQNumber(value);
@@ -19,10 +19,10 @@ export default function Challenge1() {
 
     const getInputWidth = (value) => {
         if (value === undefined){
-            setInputWidth('80px')
+            setInputWidth('100px')
         }
         else {
-            let width = (value.length * 14.5 + 80) + 'px'
+            let width = (value.length * 11.1 + 30) + 'px'
             setInputWidth(width);
         }
       };
@@ -66,11 +66,21 @@ export default function Challenge1() {
                 decimalSubStrings = breakStringIntoSubstrings(decimalPart, true)
             }
             //Step 2 find the biggest squared number that goes into the first group
-            let groupIntInd = 0
-            let groupNumber = new Decimal(integerSubStrings[groupIntInd])
+            let startingGroup = new Decimal(integerSubStrings[0])
+            let startingDecimalGroup = 0
+            let groupNumber = ''
+            if (startingGroup == 0) {
+                if (decimalSubStrings[startingDecimalGroup].length > 1)
+                    groupNumber = new Decimal(decimalSubStrings[startingDecimalGroup])
+                else
+                    groupNumber = new Decimal(decimalSubStrings[startingDecimalGroup] + '0')
+                startingDecimalGroup++;
+            } else
+                groupNumber = startingGroup
+            let remainder = ''
             let biggestSQ = getBiggestSquare(groupNumber)
             //Step 3 subtract the square of the biggest squared number from the group and take the remainder and add it to the next group
-            let remainder = groupNumber - biggestSQ*biggestSQ
+            remainder = groupNumber - biggestSQ*biggestSQ
             tempAnswer += biggestSQ
             let nextGroup = ''
             integerSubstringLength = integerSubStrings.length
@@ -79,9 +89,10 @@ export default function Challenge1() {
                     nextGroup = remainder.toString() + integerSubStrings[ind]
                 else
                     nextGroup = remainder.toString() + '00'
+                
                 let nextGroupNumber = new Decimal(nextGroup)
                 let x = (new Decimal(tempAnswer)*2).toString()
-                if (x.includes('e')) {
+                if (x.includes('e') || nextGroup.includes('e')) {
                     scientificNumber = true;
                     break
                 }
@@ -89,7 +100,8 @@ export default function Challenge1() {
                 tempAnswer += nextDivisor
                 remainder = nextGroupNumber - new Decimal(x+nextDivisor.toString())*nextDivisor
             }
-            for (let ind = 0; ind < decimal && !scientificNumber; ind++) {
+
+            for (let ind = startingDecimalGroup; ind <= decimal+startingDecimalGroup && !scientificNumber; ind++) {
                 if (decimalSubStrings[ind]) {
                     if (decimalSubStrings[ind].length > 1)
                         nextGroup = remainder.toString() + decimalSubStrings[ind]
@@ -105,12 +117,22 @@ export default function Challenge1() {
                 }
                 let nextGroupNumber = new Decimal(nextGroup)
                 let x = (new Decimal(tempAnswer)*2).toString()
+                
+                if (x.includes('e') || nextGroup.includes('e')) {
+                    scientificNumber = true;
+                    break
+                }
                 let nextDivisor = getNextBiggestDivisor(nextGroupNumber, x)
                 tempAnswer += nextDivisor
                 remainder = nextGroupNumber - new Decimal(x+nextDivisor.toString())*nextDivisor
             }
-            if (decimal > 0 && !scientificNumber)
-                tempAnswer = tempAnswer.slice(0,integerSubstringLength) + '.' + tempAnswer.slice(integerSubstringLength)
+            //round up
+            tempAnswer = tempAnswer.slice(0,(integerSubstringLength + decimal + 1) - 1) + '.' + tempAnswer.slice((integerSubstringLength + decimal + 1) - 1)
+            tempAnswer = new Decimal(tempAnswer).toFixed(0)
+            tempAnswer = tempAnswer.toString()
+            //add decimal place
+            tempAnswer = tempAnswer.slice(0,integerSubstringLength - startingDecimalGroup) + '.' + tempAnswer.slice(integerSubstringLength - startingDecimalGroup)
+            tempAnswer = new Decimal(tempAnswer).toFixed(decimal)
         }
         if (!scientificNumber){
             setAnswer(tempAnswer)

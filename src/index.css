@@ -104,8 +104,8 @@ label {
 }
 
 input {
-  padding: 1vmin;
-  font-size: 2vmin;
+  margin: 10px;
+  font-size: 20px;
   border: .1vmin solid var(--tan-3);
   border-radius: .5vmin;
   color: var(--text-dark);
