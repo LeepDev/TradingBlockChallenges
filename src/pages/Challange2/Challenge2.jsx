@@ -5,11 +5,24 @@ export default function Challenge2() {
     const [applPrice, setAPPLPrice] = useState("$170.00")
     const [amznPrice, setAMZNPrice] = useState("$120.00")
     const [currentTime, setCurrentTime] = useState(new Date());
+    const [count, setCount] = useState(0);
+    const [refreshTimerId, setRefreshIdTimer] = useState(null)
+    
     const randomSeconds = 3000
 
+    const updateCount = () => {
+        setCount((count) => count + 1)
+    }
     useEffect(() => {
+        if (refreshTimerId)
+            clearInterval(refreshTimerId)
+
+        setRefreshIdTimer(setInterval(() => {
+                updateCount()
+            }, 1000))
+
         const updateTimerMS = () => {
-            // Generate a random time between 1000 and 2000 milliseconds (1 - 2 seconds)
+            setCount(0)
             const randomTime = Math.random() * randomSeconds + 1000;
             
             // Update the stocks
@@ -23,6 +36,7 @@ export default function Challenge2() {
             setTimeout(updateTimerMS, randomTime);
         };
         const updateTimerAPPL = () => {
+            setCount(0)
             const randomTime = Math.random() * randomSeconds + 1000;
             
             // Update the stocks
@@ -36,6 +50,7 @@ export default function Challenge2() {
             setTimeout(updateTimerAPPL, randomTime);
         };
         const updateTimerAMZN = () => {
+            setCount(0)
             const randomTime = Math.random() * randomSeconds + 1000;
             
             // Update the stocks
@@ -59,6 +74,7 @@ export default function Challenge2() {
             clearTimeout(updateTimerMS); 
             clearTimeout(updateTimerAPPL); 
             clearTimeout(updateTimerAMZN); 
+            clearInterval(refreshTimerId);
         }
       }, []); // Empty dependency array ensures the effect runs only once on mount
     
@@ -73,7 +89,7 @@ export default function Challenge2() {
         <p>AMZN (Amazon): ${amznPrice}</p>
         
         <br/>
-        <p>Current Time(updated every refresh): {formattedTime}</p>
+        <p>Refresh Count: {count}</p>
     </div>
     );
 }

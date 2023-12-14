@@ -39,17 +39,23 @@ export default function Challenge1() {
       };
 
     useEffect(() => {
-        getSquareRoot(sqNumber)
-    }, [sqNumber, decimal])
+        const runGetSquareRoot = async () => {
+            await getSquareRoot(sqNumber)
+        }
 
+        runGetSquareRoot()
+    }, [sqNumber, decimal])
+    
     const getSquareRoot = (value) => {
+        let scientificNumber = false
+        let tempAnswer = ''
         if (value !== 0 && !value)
             setAnswer('Please enter in a number.')
         else if (value == 0)
             setAnswer('0')
-        else {
+        else if (!scientificNumber) {
             //Step one break number into groups of 2
-            let tempAnswer = ''
+            let integerSubstringLength = 0
             const sqString = value.toString()
             const parts = sqString.split('.')
             const integerPart = parts[0]
@@ -67,19 +73,23 @@ export default function Challenge1() {
             let remainder = groupNumber - biggestSQ*biggestSQ
             tempAnswer += biggestSQ
             let nextGroup = ''
-            for (let ind = 1; ind < integerSubStrings.length; ind++) {
+            integerSubstringLength = integerSubStrings.length
+            for (let ind = 1; ind < integerSubstringLength; ind++) {
                 if (integerSubStrings[ind])
                     nextGroup = remainder.toString() + integerSubStrings[ind]
                 else
                     nextGroup = remainder.toString() + '00'
                 let nextGroupNumber = new Decimal(nextGroup)
                 let x = (new Decimal(tempAnswer)*2).toString()
+                if (x.includes('e')) {
+                    scientificNumber = true;
+                    break
+                }
                 let nextDivisor = getNextBiggestDivisor(nextGroupNumber, x)
                 tempAnswer += nextDivisor
                 remainder = nextGroupNumber - new Decimal(x+nextDivisor.toString())*nextDivisor
             }
-            let scientificNumber = false
-            for (let ind = 0; ind < decimal; ind++) {
+            for (let ind = 0; ind < decimal && !scientificNumber; ind++) {
                 if (decimalSubStrings[ind]) {
                     if (decimalSubStrings[ind].length > 1)
                         nextGroup = remainder.toString() + decimalSubStrings[ind]
@@ -99,13 +109,15 @@ export default function Challenge1() {
                 tempAnswer += nextDivisor
                 remainder = nextGroupNumber - new Decimal(x+nextDivisor.toString())*nextDivisor
             }
-            if (decimal > 0)
-                tempAnswer = tempAnswer.slice(0,integerSubStrings.length) + '.' + tempAnswer.slice(integerSubStrings.length)
-            if (!scientificNumber)
-                setAnswer(tempAnswer)
-            else
-                setAnswer("The answer contains a scientific number which is outside the bounds of this operation.  Many apologies.  :(")
-        }}
+            if (decimal > 0 && !scientificNumber)
+                tempAnswer = tempAnswer.slice(0,integerSubstringLength) + '.' + tempAnswer.slice(integerSubstringLength)
+        }
+        if (!scientificNumber){
+            setAnswer(tempAnswer)
+        }
+        else
+            setAnswer("The answer contains a scientific number which is outside the bounds of this operation.  Many apologies.  :(")
+    }
 
     function getNextBiggestDivisor(number, numString) {
         let biggestDivisor = 0
@@ -139,12 +151,10 @@ export default function Challenge1() {
       }
 
     return (
-    <div>
-        <button onClick={() => window.location.href = '/'}>Home</button>
-
+    <div style={{width: '100vh', padding: '10vh'}} className="flex-ctr-ctr flex-col">
         <h1>Trading Block Challenge 1</h1>
 
-        <p>What is the square root of <input style={{ textAlign: 'right', height: '2vmin', width: inputWidth}} type="number" value={sqNumber} onChange={handleInputChangeSQ} />?</p>
+        <p>What is the square root of <input style={{ textAlign: 'right', height: '30px', width: inputWidth}} type="number" value={sqNumber} onChange={handleInputChangeSQ} />?</p>
         <p>To which decimal place? <button onClick={handleInputChangeDecimalUp}>+</button><button onClick={handleInputChangeDecimalDown}>-</button></p>
         <p>Square root of <span style={{ fontWeight: 'bold' }}>{sqNumber}</span> to the <span style={{ fontWeight: 'bold' }}>{decimal}</span>th decimal place</p>
         <p>Equals: <span style={{ fontWeight: 'bold' }}>{answer}</span></p>

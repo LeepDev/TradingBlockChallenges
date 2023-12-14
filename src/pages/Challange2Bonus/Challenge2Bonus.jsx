@@ -1,16 +1,39 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getCurrentPrice } from '../../utilities/fmp-service'
 
 export default function Challenge2Bonus() {
     const [timer, setTimer] = useState(null)
+    const [refreshTimerId, setRefreshIdTimer] = useState(null)
     const [msPrice, setMSPrice] = useState("70.00")
     const [applPrice, setAPPLPrice] = useState("170.00")
     const [amznPrice, setAMZNPrice] = useState("120.00")
-    const [currentTime, setCurrentTime] = useState(new Date());
+    const [count, setCount] = useState(0);
+    const [resetTimer, setResetTimer] = useState(false);
+    
+    const updateCount = () => {
+        setCount((count) => count + 1)
+    }
 
+    useEffect(() => {
+        if (resetTimer) {
+            setCount(0)
+            if (refreshTimerId)
+                clearInterval(refreshTimerId)
+            setResetTimer(false)
+        }
+
+        setRefreshIdTimer(setInterval(() => {
+                updateCount()
+            }, 1000))
+
+        return () => {
+            clearInterval(refreshTimerId);
+        };
+    }, [resetTimer]);
+    
     const updateTimer = () => {
         const randomTime = Math.random() * 3000 + 1000;
-        
+
         // Update the stocks
         handleStockCall()
         
@@ -19,9 +42,9 @@ export default function Challenge2Bonus() {
     };
 
     const handleStockCall = async () => {
-        setCurrentTime(new Date())
+        setResetTimer(true)
         let res,price
-
+        
         res = await getCurrentPrice("AMZN")
         price = getPriceFromJSON(res)
         setAMZNPrice(price)
@@ -33,6 +56,7 @@ export default function Challenge2Bonus() {
         res = await getCurrentPrice("AAPL")
         price = getPriceFromJSON(res)
         setAPPLPrice(price)
+
     }
 
     const getPriceFromJSON = (res) => {
@@ -44,14 +68,12 @@ export default function Challenge2Bonus() {
         return price
     }
 
-    const formattedTime = currentTime.toLocaleTimeString();
-
     const toggleCalls = () => {
         if (!timer) {
             updateTimer();
         } else {
             clearTimeout(timer);
-            setTimer(null);
+            setTimer(null)
         }
     }
 
@@ -64,7 +86,7 @@ export default function Challenge2Bonus() {
         <p>AMZN (Amazon): {amznPrice}</p>
 
         <br/>
-        <p>Current Time(updated every refresh): {formattedTime}</p>
+        <p>Refresh Count: {count}</p>
 
         <button onClick={toggleCalls}>{timer ? "Stop Calls" : "Start Calls"}</button>
     </div>

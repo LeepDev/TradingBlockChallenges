@@ -1,6 +1,6 @@
 export default function ChallengeLP() {
     return (
-    <div>
+    <div style={{width: '100vh', padding: '10vh'}} className="flex-ctr-ctr flex-col">
         <h1>Trading Block Challenges</h1>
 
         <ol>
