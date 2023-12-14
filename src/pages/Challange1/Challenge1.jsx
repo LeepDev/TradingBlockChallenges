@@ -13,6 +13,7 @@ export default function Challenge1() {
         if (event.keyCode === 8 || event.keyCode === 46) {
             event.target.value = null
             setSQNumber(undefined)
+            setDecimal(2)
         } else if (event.keyCode === 107 || (event.keyCode === 187 && event.shiftKey)) {
             setDecimal(decimal + 1);
             getSquareRoot(sqNumber)
