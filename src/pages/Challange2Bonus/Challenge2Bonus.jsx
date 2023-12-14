@@ -11,21 +11,16 @@ export default function Challenge2Bonus() {
     const [resetTimer, setResetTimer] = useState(false);
     
     const updateCount = () => {
+        setResetTimer(false)
         setCount((count) => count + 1)
     }
 
     useEffect(() => {
-        if (resetTimer) {
+        if (refreshTimerId)
+            clearInterval(refreshTimerId)
+        if (resetTimer)
             setCount(0)
-            if (refreshTimerId)
-                clearInterval(refreshTimerId)
-            setResetTimer(false)
-        }
-
-        setRefreshIdTimer(setInterval(() => {
-                updateCount()
-            }, 1000))
-
+        setRefreshIdTimer(setInterval(() => {updateCount()}, 1000))
         return () => {
             clearInterval(refreshTimerId);
         };
