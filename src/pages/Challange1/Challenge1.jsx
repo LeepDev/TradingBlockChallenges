@@ -3,50 +3,64 @@ import { useEffect, useRef, useState } from 'react';
 
 export default function Challenge1() {
     const inputRef = useRef(null);
-    const [sqNumber, setSQNumber] = useState(0)
-    const [decimal, setDecimal] = useState(0)
+    const [sqNumber, setSQNumber] = useState(undefined)
+    const [decimal, setDecimal] = useState(2)
     const [answer, setAnswer] = useState("Please enter a number!")
-    const [inputWidth, setInputWidth] = useState('40px')
+    const [inputWidth, setInputWidth] = useState(null)
+
     
     const clearInput = (event) => {
         if (event.keyCode === 8 || event.keyCode === 46) {
-            getInputWidth("0");
-            setSQNumber(0)
+            event.target.value = null
+            setSQNumber(undefined)
+        } else if (event.keyCode === 107 || (event.keyCode === 187 && event.shiftKey)) {
+            setDecimal(decimal + 1);
+            getSquareRoot(sqNumber)
+        }
+        else if (event.keyCode === 109 || (event.keyCode === 189 && !event.shiftKey)) {
+            if (decimal > 0)
+                setDecimal(decimal - 1);
+            getSquareRoot(sqNumber)
         }
     }
-
+    
     const handleInputChangeSQ = (event) => {
         const value = event.target.value;
         const regex = /^[+]?([0-9]+(?:[\.][0-9]*)?|\.[0-9]+)$/;
     
         if (regex.test(value)) {
-            getInputWidth(value);
             setSQNumber(value);
-        } else {
-            setAnswer("Please enter a non-negative number.")
         }
       };
 
     const getInputWidth = (value) => {
-        let width = (value.length * 11.1 + 40) + 'px'
-        setInputWidth(width);
-      };
+        if (value) {
+            let width = (value.length * 11.1 + 40) + 'px'
+            setInputWidth(width);
+        } else {
+            setInputWidth('51.1px');
+        }
+    };
 
-    const handleInputChangeDecimalUp = (event) => {
+    const handleInputChangeDecimalUp = () => {
         setDecimal(decimal + 1);
         getSquareRoot(sqNumber)
       };
       
-    const handleInputChangeDecimalDown = (event) => {
+    const handleInputChangeDecimalDown = () => {
         if (decimal > 0)
             setDecimal(decimal - 1);
-            getSquareRoot(sqNumber)
+        getSquareRoot(sqNumber)
       };
 
     useEffect(() => {
         inputRef.current.focus();
 
         const runGetSquareRoot = async () => {
+            if (sqNumber)
+                getInputWidth(sqNumber)
+            else
+                getInputWidth(null)
             await getSquareRoot(sqNumber)
         }
 
@@ -56,10 +70,10 @@ export default function Challenge1() {
     const getSquareRoot = (value) => {
         let scientificNumber = false
         let tempAnswer = ''
-        if (value !== 0 && !value)
-            setAnswer('Please enter in a number.')
+        if (!value)
+            tempAnswer ='Please enter a number!'
         else if (value == 0)
-            setAnswer('0')
+            tempAnswer ='0'
         else if (!scientificNumber) {
             //Step one break number into groups of 2
             let integerSubstringLength = 0
@@ -193,7 +207,12 @@ export default function Challenge1() {
 
         <p>What is the square root of <input ref={inputRef} style={{ textAlign: 'right', height: '30px', width: inputWidth}} type="number" value={sqNumber} onKeyDown={clearInput} onChange={handleInputChangeSQ} />?</p>
         <p>To which decimal place? <button onClick={handleInputChangeDecimalUp}>+</button><button onClick={handleInputChangeDecimalDown}>-</button></p>
-        <p>Square root of <span style={{ fontWeight: 'bold' }}>{sqNumber}</span> to the <span style={{ fontWeight: 'bold' }}>{decimal}</span>th decimal place</p>
+        {
+            sqNumber ? 
+                <p>Square root of <span style={{ fontWeight: 'bold' }}>{sqNumber}</span> to the <span style={{ fontWeight: 'bold' }}>{decimal}</span>th decimal place</p>
+            :
+                <></>
+        }
         <p>Equals: <span style={{ fontWeight: 'bold' }}>{answer}</span></p>
     </div>
     );
