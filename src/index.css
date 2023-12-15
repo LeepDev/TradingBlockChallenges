@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 /* CSS Custom Properties */
 :root {
   --white: #FFFFFF;
@@ -22,8 +27,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #306092;
-  padding: 2vmin;
-  height: 100vh;
 }
 
 code {

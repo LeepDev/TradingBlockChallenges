@@ -15,7 +15,7 @@ export default function App() {
   const [user, setUser] = useState(getUser())
 
   return (
-    <main className="App flex-ctr-ctr flex-col">
+    <main className="App flex-ctr-ctr flex-col antialiased">
       { user ? 
         <>
           <NavBar user={user} setUser={setUser} />
