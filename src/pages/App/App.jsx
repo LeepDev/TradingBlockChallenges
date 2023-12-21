@@ -15,7 +15,7 @@ export default function App() {
   const [user, setUser] = useState(getUser())
 
   return (
-    <main className="App flex-ctr-ctr flex-col antialiased">
+    <main className="bg-gradient-to-b from-midnight-blue to-rgb(255,196,126) w-full h-screen flex flex-ctr-ctr flex-col antialiased">
       { user ? 
         <>
           <NavBar user={user} setUser={setUser} />

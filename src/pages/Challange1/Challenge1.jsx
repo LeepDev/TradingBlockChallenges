@@ -203,27 +203,34 @@ export default function Challenge1() {
       }
 
     return (
-    <div style={{width: '100vh', padding: '10vh'}} className="flex-ctr-ctr flex-col">
-        <h1>Trading Block Challenge 1</h1>
+    <div className="bg-gradient-to-b from-midnight-blue to-rgb(255,196,126) h-screen w-full flex-ctr-ctr flex-col">
+        <div style={{width: '100vh', padding: '10vh'}} className="flex-ctr-ctr flex-col">
+            <h1 className='text-white text-4xl font-bold pb-20'>Trading Block Challenge 1</h1>
 
-        <p>
-            What is the square root of 
-            <input ref={inputRef} style={{ textAlign: 'right', height: '30px', width: inputWidth}} type="number" value={sqNumber} onKeyDown={clearInput} onChange={handleInputChangeSQ} />?
-            <br />
-            <span style={{ color: 'black' }}>( Please clear using the delete or backspace key and enter a valid positive number.</span>
-            <br />
-            <span style={{ color: 'black' }}>Also feel free to use the +/- keys to increment and decrement the decimal place.</span>
-            <br />
-            <span style={{ color: 'black' }}>I.E. - 123, 123.12, 0.5, .34 )</span>
-        </p>
-        <p>To which decimal place? <button onClick={handleInputChangeDecimalUp}>+</button><button onClick={handleInputChangeDecimalDown}>-</button></p>
-        {
-            sqNumber ? 
-                <p>Square root of <span style={{ fontWeight: 'bold' }}>{sqNumber}</span> to the <span style={{ fontWeight: 'bold' }}>{decimal}</span>th decimal place</p>
-            :
-                <></>
-        }
-        <p>Equals: <span style={{ fontWeight: 'bold' }}>{answer}</span></p>
+            <p className='text-white text-2xl pb-10'>
+                What is the square root of 
+                <input className='text-black' ref={inputRef} style={{ textAlign: 'right', height: '30px', width: inputWidth}} type="number" value={sqNumber} onKeyDown={clearInput} onChange={handleInputChangeSQ} />
+                to the {decimal}th place?
+                <br></br>
+                <button className="text-white bg-teal hover:bg-teal/70 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2" onClick={handleInputChangeDecimalUp}>+</button>
+                <button className="text-white bg-teal hover:bg-teal/70 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2" onClick={handleInputChangeDecimalDown}>-</button>
+            </p>
+            <p className='text-white text-2xl pb-10'>
+                Please enter a valid positive number and clear the input using the delete or backspace key.
+                Also, feel free to use the +/- keys to increment and decrement the decimal place. The cursor
+                is focused in the input box on default.
+                <br />
+                <br />
+                I.E. - 123, 123.12, 0.5, .34
+            </p>
+            {
+                sqNumber ? 
+                    <p className='text-white text-2xl pb-5'>Square root of <span style={{ fontWeight: 'bold' }}>{sqNumber}</span> to the <span style={{ fontWeight: 'bold' }}>{decimal}</span>th decimal place</p>
+                :
+                    <></>
+            }
+            <p className='text-white text-2xl'><span style={{ fontWeight: 'bold' }}>{answer}</span></p>
+        </div>
     </div>
     );
 }
