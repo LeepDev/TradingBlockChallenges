@@ -18,7 +18,7 @@ export default function App() {
     <main className="bg-gradient-to-b from-midnight-blue to-rgb(255,196,126) w-full h-screen flex flex-ctr-ctr flex-col antialiased">
       { user ? 
         <>
-          <NavBar user={user} setUser={setUser} />
+          <NavBar setUser={setUser} />
           <Routes>
            <Route path="/" element={ <ChallengeLP/> } />
            <Route path="/Challenge1" element={ <Challenge1/> } />
