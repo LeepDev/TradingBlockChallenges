@@ -1,7 +1,7 @@
 export default function ChallengeLP() {
     return (
     <div className="bg-gradient-to-b from-midnight-blue to-rgb(255,196,126) h-screen w-full flex flex-ctr-ctr flex-col">
-        <div style={{width: '100vh', padding: '10vh'}} className="flex-ctr-ctr flex-col">
+        <div className="flex-ctr-ctr flex-col rounded-xl bg-midnight-blue w-11/12 px-10 py-5 border border-teal/10 shadow-teal shadow-2xl">
             <h1 className='text-white text-4xl font-bold'>Trading Block Challenge Prompts</h1>
             <br/>
 
@@ -28,7 +28,7 @@ export default function ChallengeLP() {
                 </li>
                 <br></br>
                 <li>
-                Challenge task: inspired by top of our company’s landing page at <a href="www.tradingblock.com">www.tradingblock.com</a> and by our virtual trading platform <a href="https://vt.tradingblock.com">https://vt.tradingblock.com</a> , build  a simple one screen web page looking alike ours but with quoted prices on it changing (no need to use market data). 
+                Challenge task: inspired by top of our company’s landing page at <a href="www.tradingblock.com">www.tradingblock.com</a> and by our virtual trading platform <a href="https://vt.tradingblock.com">https://vt.tradingblock.com</a> , build  a simple one screen web page looking like ours but with quoted prices on it changing (no need to use market data). 
                 </li>
             </ol>
         </div>

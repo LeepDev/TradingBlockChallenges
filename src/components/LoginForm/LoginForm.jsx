@@ -29,10 +29,10 @@ export default function LoginForm({ setUser, setSignUp }) {
 
   return (
     <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto h-1/2">
-        <a href="#" class="flex items-center mb-6 text-2xl font-semibold dark:text-white">
+        <span href="#" class="flex items-center mb-6 text-2xl font-semibold dark:text-white">
             <img class="w-8 h-8 mr-2" src="/TB_Logo.svg" alt="logo" />
             TradingBlock Challenges    
-        </a>
+        </span>
         <div class="w-full rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-midnight-blue dark:border-midnight-blue">
             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                 <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">

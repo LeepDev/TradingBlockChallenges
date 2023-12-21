@@ -25,7 +25,7 @@ export default function App() {
            <Route path="/Challenge2" element={ <Challenge2/> } />
            <Route path="/Challenge3" element={ <Challenge3/> } />
            <Route path="/Challenge2Bonus" element={ <Challenge2Bonus/> } />
-           <Route path="*" element={ <div><h1>404 Not Found</h1></div> }/>
+           <Route path="*" element={ <div className='border rounded-lg bg-slate-500 h-5/6 flex-ctr-ctr w-5/6'><h1>404 Not Found</h1></div> }/>
           </Routes> 
         </>
         :

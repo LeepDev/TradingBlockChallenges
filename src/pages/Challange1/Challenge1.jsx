@@ -36,10 +36,10 @@ export default function Challenge1() {
 
     const getInputWidth = (value) => {
         if (value) {
-            let width = (value.length * 11.1 + 40) + 'px'
+            let width = (value.length * 13 + 40) + 'px'
             setInputWidth(width);
         } else {
-            setInputWidth('51.1px');
+            setInputWidth('40px');
         }
     };
 
@@ -204,32 +204,30 @@ export default function Challenge1() {
 
     return (
     <div className="bg-gradient-to-b from-midnight-blue to-rgb(255,196,126) h-screen w-full flex-ctr-ctr flex-col">
-        <div style={{width: '100vh', padding: '10vh'}} className="flex-ctr-ctr flex-col">
-            <h1 className='text-white text-4xl font-bold pb-20'>Trading Block Challenge 1</h1>
+        <div style={{width: '100vh', padding: '10vh'}} className="flex-ctr-ctr flex-col border rounded-xl border-teal/10  bg-midnight-blue shadow-teal shadow-2xl">
+            <h1 className='text-white text-4xl font-bold pb-10'>Trading Block Challenge 1</h1>
 
-            <p className='text-white text-2xl pb-10'>
-                What is the square root of 
-                <input className='text-black' ref={inputRef} style={{ textAlign: 'right', height: '30px', width: inputWidth}} type="number" value={sqNumber} onKeyDown={clearInput} onChange={handleInputChangeSQ} />
+            <div className='text-white text-2xl flex-ctr-ctr flex-col'>
+                What is the square root of<br/>
+                <input className='text-black text-center font-bold block py-2.5 px-0 w-full text-lg bg-transparent border-0 border-b-2 appearance-none dark:text-white dark:border-white dark:focus:border-teal focus:outline-none focus:ring-0 focus:border-teal peer' ref={inputRef} style={{ width: inputWidth}} type="text" value={sqNumber} onKeyDown={clearInput} onChange={handleInputChangeSQ} />
                 to the {decimal}th place?
-                <br></br>
-                <button className="text-white bg-teal hover:bg-teal/70 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2" onClick={handleInputChangeDecimalUp}>+</button>
-                <button className="text-white bg-teal hover:bg-teal/70 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2" onClick={handleInputChangeDecimalDown}>-</button>
-            </p>
-            <p className='text-white text-2xl pb-10'>
-                Please enter a valid positive number and clear the input using the delete or backspace key.
-                Also, feel free to use the +/- keys to increment and decrement the decimal place. The cursor
-                is focused in the input box on default.
-                <br />
+                <div className='flex-ctr-ctr p-2'>
+                    <button className="text-white bg-teal hover:bg-teal/70 focus:outline-none focus:ring-4 focus:ring-teal font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2" onClick={handleInputChangeDecimalUp}>+</button>
+                    <button className="text-white bg-teal hover:bg-teal/70 focus:outline-none focus:ring-4 focus:ring-teal font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2" onClick={handleInputChangeDecimalDown}>-</button>
+                </div>
+            </div>
+            <p className='text-teal text-base pb-10 text-center w-3/4'>
+                Please enter a valid positive number and clear the input using the delete or the backspace key. Also, feel free to use the +/- keys to increment and decrement the decimal place. The cursor is focused in the input box on default.
                 <br />
                 I.E. - 123, 123.12, 0.5, .34
             </p>
             {
-                sqNumber ? 
-                    <p className='text-white text-2xl pb-5'>Square root of <span style={{ fontWeight: 'bold' }}>{sqNumber}</span> to the <span style={{ fontWeight: 'bold' }}>{decimal}</span>th decimal place</p>
+                answer.length > 106 ?
+                <div className='text-center text-white font-bold w-3/4'>{answer}</div>
                 :
-                    <></>
+                <input type="text" id="disabled-input" aria-label="disabled input"  value={answer}
+                className="mb-5 w-fit text-center font-bold text-lg border rounded-lg block p-2.5 cursor-not-allowed dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-gray-400" disabled />
             }
-            <p className='text-white text-2xl'><span style={{ fontWeight: 'bold' }}>{answer}</span></p>
         </div>
     </div>
     );

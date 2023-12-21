@@ -74,19 +74,21 @@ export default function Challenge2Bonus() {
 
     return (
     <div className="bg-gradient-to-b from-midnight-blue to-rgb(255,196,126) h-screen w-full flex-ctr-ctr flex-col">
-        <div style={{width: '100vh', padding: '10vh'}} className="flex-ctr-ctr flex-col">
-            <h1 className='text-white text-4xl font-bold pb-5'>Trading Block Challenge 2 (updating between 1-4 seconds)</h1>
+        <div style={{width: '100vh', padding: '10vh'}} className="flex-ctr-ctr flex-col border border-teal/10 rounded-xl bg-midnight-blue shadow-teal shadow-2xl">
+            <h1 className='text-white text-4xl font-bold pb-5 text-center'>Trading Block Challenge 2</h1>
 
             <br />
             
-            <p className='text-white'>MS (Morgan Stanley): ${msPrice}</p>
-            <p className='text-white'>APPL (Apple): ${applPrice}</p>
-            <p className='text-white'>AMZN (Amazon): ${amznPrice}</p>
+            <p className='text-white text-2xl'>MS (Morgan Stanley): ${msPrice}</p>
+            <p className='text-white text-2xl'>APPL (Apple): ${applPrice}</p>
+            <p className='text-white text-2xl'>AMZN (Amazon): ${amznPrice}</p>
 
             <br/>
             <p className='text-white'>Refresh Count: {count}</p>
+            <p className='text-white pb-10'>(updating between 1-4 seconds)</p>
+            
 
-            <button onClick={toggleCalls}>{timer ? "Stop Calls" : "Start Calls"}</button>
+            <button className='text-white bg-teal hover:bg-teal/70 focus:outline-none focus:ring-4 focus:ring-teal font-medium rounded-full text-lg px-5 py-2.5 text-center me-2 mb-2' onClick={toggleCalls}>{timer ? "Stop Calls" : "Start Calls"}</button>
         </div>
     </div>
     );
