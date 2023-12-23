@@ -203,8 +203,8 @@ export default function Challenge1() {
       }
 
     return (
-    <div className="bg-gradient-to-b from-midnight-blue to-rgb(255,196,126) h-screen w-full flex-ctr-ctr flex-col pt-16">
-        <div style={{width: '100vh', padding: '10vh'}} className="flex-ctr-ctr flex-col border rounded-xl border-teal/10  bg-midnight-blue shadow-teal shadow-2xl mt-10">
+    <div className="bg-gradient-to-b from-midnight-blue to-rgb(255,196,126) h-screen w-screen flex flex-col items-center justify-start pt-10">
+        <div style={{width: '100vh'}} className="flex-ctr-ctr flex-col border rounded-xl border-teal/10  bg-midnight-blue shadow-teal shadow-2xl mt-10 py-10">
             <h1 className='text-white text-4xl font-bold pb-10'>Trading Block Challenge 1</h1>
 
             <div className='text-white text-2xl flex-ctr-ctr flex-col'>
@@ -212,8 +212,8 @@ export default function Challenge1() {
                 <input className='text-black text-center font-bold block py-2.5 px-0 w-full text-lg bg-transparent border-0 border-b-2 appearance-none dark:text-white dark:border-white dark:focus:border-teal focus:outline-none focus:ring-0 focus:border-teal peer' ref={inputRef} style={{ width: inputWidth}} type="text" value={sqNumber} onKeyDown={clearInput} onChange={handleInputChangeSQ} />
                 to the {decimal}th place?
                 <div className='flex-ctr-ctr p-2'>
-                    <button className="text-white bg-teal hover:bg-teal/70 focus:outline-none focus:ring-4 focus:ring-teal font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2" onClick={handleInputChangeDecimalUp}>+</button>
-                    <button className="text-white bg-teal hover:bg-teal/70 focus:outline-none focus:ring-4 focus:ring-teal font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2" onClick={handleInputChangeDecimalDown}>-</button>
+                    <button className="text-white bg-teal hover:bg-teal/70 focus:outline-none focus:ring-4 focus:border-primary-600  font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2" onClick={handleInputChangeDecimalUp}>+</button>
+                    <button className="text-white bg-teal hover:bg-teal/70 focus:outline-none focus:ring-4 focus:border-primary-600  font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2" onClick={handleInputChangeDecimalDown}>-</button>
                 </div>
             </div>
             <p className='text-teal text-base pb-10 text-center w-3/4'>

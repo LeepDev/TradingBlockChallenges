@@ -88,7 +88,7 @@ export default function Challenge2Bonus() {
             <p className='text-white pb-10'>(updating between 1-4 seconds)</p>
             
 
-            <button className='text-white bg-teal hover:bg-teal/70 focus:outline-none focus:ring-4 focus:ring-teal font-medium rounded-full text-lg px-5 py-2.5 text-center me-2 mb-2' onClick={toggleCalls}>{timer ? "Stop Calls" : "Start Calls"}</button>
+            <button className='text-white bg-teal hover:bg-teal/70 focus:outline-none focus:ring-4 focus:border-primary-600 font-medium rounded-full text-lg px-5 py-2.5 text-center me-2 mb-2' onClick={toggleCalls}>{timer ? "Stop Calls" : "Start Calls"}</button>
         </div>
     </div>
     );

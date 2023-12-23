@@ -15,10 +15,13 @@ export default function App() {
   const [user, setUser] = useState(getUser())
 
   return (
-    <main className="bg-gradient-to-b from-midnight-blue to-rgb(255,196,126) w-full h-screen flex flex-ctr-ctr flex-col antialiased overflow-auto -z-20">
+    <div className='w-screen h-screen antialiased overflow-hidden'>
+    {
+      user && <NavBar setUser={setUser} />
+    }
+    <main className="bg-gradient-to-b from-midnight-blue to-rgb(255,196,126) w-screen h-screen flex flex-ctr-ctr flex-col fixed top-16 overflow-y-auto pb-20">
       { user ? 
         <>
-          <NavBar setUser={setUser} />
           <Routes>
            <Route path="/" element={ <ChallengeLP/> } />
            <Route path="/Challenge1" element={ <Challenge1/> } />
@@ -32,6 +35,8 @@ export default function App() {
         <AuthPage setUser={setUser} />
       }
     </main>
+    </div>
+    
     // <main className="App">
     //   
     // </main>
