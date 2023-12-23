@@ -1,11 +1,11 @@
 # Trading Block Challenges
 
 ## Useful Links
-[Live Website](https://trading-block-challenges-2d51bd1413ca.herokuapp.com/)
-[Miro Board](https://miro.com/app/board/uXjVNEHOQ70=/
-)
-[Financial Modeling Prep Market Data Source](https://site.financialmodelingprep.com/developer)
-[Financial Modeling Prep Github for Node.js](https://github.com/patelneel55/financialmodelingprep)
+* [Live Website](https://trading-block-challenges-2d51bd1413ca.herokuapp.com/)
+* [Miro Board](https://miro.com/app/board/uXjVNEHOQ70=/
+* )
+* [Financial Modeling Prep Market Data Source](https://site.financialmodelingprep.com/developer)
+* [Financial Modeling Prep Github for Node.js](https://github.com/patelneel55/financialmodelingprep)
 
 ## Trading Block Challenges
 * Displays landing page that allows user/client to access all 3 challenges
