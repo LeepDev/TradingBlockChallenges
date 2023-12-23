@@ -5,7 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 export default function Challenge3() {
     const [timer, setTimer] = useState(null)
     const [quotes, setQuotes] = useState({})
-    const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
+    const isMobile = useMediaQuery({ query: `(max-width: 876px)` });
     const [prices, setPrices] = useState({})
     const [upDown, setUpDown] = useState({})
     const symbolList = ['MS', 'AAPL', 'AMZN']
@@ -111,7 +111,7 @@ export default function Challenge3() {
     <div className="bg-gradient-to-b from-midnight-blue to-rgb(255,196,126) h-screen w-full flex-ctr-ctr flex-col pb-10">
         {
             !isMobile && 
-            <div className="flex-ctr-ctr flex-col shadow-teal shadow-2xl rounded-xl bg-midnight-blue border border-teal/10 p-10 mt-72 -z-0">
+            <div className="flex flex-col items-center justify-start shadow-teal shadow-2xl rounded-xl bg-midnight-blue border border-teal/10 md:w-11/12 h-fit mt-10 md:py-10 md:px-0 p-10">
                 <div className="relative overflow-x-auto">
                     <table className="text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 overflow-hidden">
                         <thead className="text-xs border-b dark:bg-midnight-blue dark:border-gray-700 dark:text-gray-600">

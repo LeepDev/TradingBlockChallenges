@@ -7,8 +7,8 @@ export default function NavBar ({setUser}) {
     const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
     const [menuOpen, setMenuOpen] = useState("hidden");
     const location = useLocation()
-    const navText = "text-gray-300 hover:text-gray-500 rounded-md px-3 py-2 text-base font-medium font-['Heebo']"
-    const navTextActive = "text-teal hover:text-white rounded-md px-3 py-2 text-base font-medium font-['Heebo']"
+    const navText = "text-gray-300 hover:text-gray-500 rounded-md px-3 py-2 max-w-1/4 min-w-[100px] lg:text-base md:text-sm text-xs font-medium font-['Heebo']"
+    const navTextActive = "text-teal hover:text-white rounded-md px-3 py-2 max-w-1/4 min-w-[100px] lg:text-base md:text-sm text-xs font-medium font-['Heebo']"
 
     // Add the following function
     function handleLogOut() {
@@ -40,7 +40,7 @@ export default function NavBar ({setUser}) {
                         <img src="https://assets-global.website-files.com/5d5c50dcee289053140e5d5f/5d5d88ca3e9e5acdd003f839_logo.svg" alt="TradingBlock" />
                     </Link>
                 </div>
-                <div id="navbar-default" className="grow shrink basis-0 h-6 justify-start items-center gap-8 lg:flex md:flex hidden">
+                <div id="navbar-default" className="grow shrink basis-0 h-6 justify-start items-center gap-4 lg:flex md:flex hidden">
                     <Link to="/Challenge1" className={location.pathname == "/Challenge1" ? navTextActive : navText}>Challenge 1</Link>
                     <Link to="/Challenge2" className={location.pathname == "/Challenge2" ? navTextActive : navText}>Challenge 2</Link>
                     <Link to="/Challenge2Bonus" className={location.pathname == "/Challenge2Bonus" ? navTextActive : navText}>Challenge 2 (BONUS)</Link>

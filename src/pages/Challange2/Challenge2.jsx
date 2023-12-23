@@ -82,14 +82,14 @@ export default function Challenge2() {
 
     return (
     <div className="bg-gradient-to-b from-midnight-blue to-rgb(255,196,126) h-screen w-full flex-ctr-ctr flex-col pt-16">
-        <div style={{width: '100vh', padding: '10vh'}} className="flex-ctr-ctr flex-col border border-teal/10 rounded-xl bg-midnight-blue shadow-teal shadow-2xl mt-10">
-            <h1 className='text-white text-4xl font-bold'>Trading Block Challenge 2</h1>
+        <div className="flex flex-col items-center justify-start w-11/12 h-fit border border-teal/10 rounded-xl bg-midnight-blue shadow-teal shadow-2xl mt-10 py-10">
+            <h1 className='text-white md:text-4xl sm:text-3xl font-bold pb-10 text-2x1'>Trading Block Challenge 2</h1>
 
             <br />
 
-            <p className='text-white text-2xl'>MS (Morgan Stanley): ${msPrice}</p>
-            <p className='text-white text-2xl'>APPL (Apple): ${applPrice}</p>
-            <p className='text-white text-2xl'>AMZN (Amazon): ${amznPrice}</p>
+            <p className='text-white sm:text-xl text-lg flex-ctr-ctr flex-col'>MS (Morgan Stanley): ${msPrice}</p>
+            <p className='text-white sm:text-xl text-lg flex-ctr-ctr flex-col'>APPL (Apple): ${applPrice}</p>
+            <p className='text-white sm:text-xl text-lg flex-ctr-ctr flex-col'>AMZN (Amazon): ${amznPrice}</p>
             
             <br/>
             <p className='text-white'>Refresh Count: {count}</p>

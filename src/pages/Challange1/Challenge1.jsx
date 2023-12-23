@@ -204,10 +204,10 @@ export default function Challenge1() {
 
     return (
     <div className="bg-gradient-to-b from-midnight-blue to-rgb(255,196,126) h-screen w-screen flex flex-col items-center justify-start pt-10">
-        <div style={{width: '100vh'}} className="flex-ctr-ctr flex-col border rounded-xl border-teal/10  bg-midnight-blue shadow-teal shadow-2xl mt-10 py-10">
-            <h1 className='text-white text-4xl font-bold pb-10'>Trading Block Challenge 1</h1>
+        <div className="flex flex-col items-center justify-start border rounded-xl border-teal/10 w-11/12 h-fit bg-midnight-blue shadow-teal shadow-2xl mt-10 py-10">
+            <h1 className='text-white md:text-4xl sm:text-3xl font-bold pb-10 text-2x1'>Trading Block Challenge 1</h1>
 
-            <div className='text-white text-2xl flex-ctr-ctr flex-col'>
+            <div className='text-white md:text-xl sm:text-lg text-base flex-ctr-ctr flex-col'>
                 What is the square root of<br/>
                 <input className='text-black text-center font-bold block py-2.5 px-0 w-full text-lg bg-transparent border-0 border-b-2 appearance-none dark:text-white dark:border-white dark:focus:border-teal focus:outline-none focus:ring-0 focus:border-teal peer' ref={inputRef} style={{ width: inputWidth}} type="text" value={sqNumber} onKeyDown={clearInput} onChange={handleInputChangeSQ} />
                 to the {decimal}th place?
@@ -223,7 +223,7 @@ export default function Challenge1() {
             </p>
             {
                 answer.length > 106 ?
-                <div className='text-center text-white font-bold w-3/4'>{answer}</div>
+                <div className='text-center text-white font-bold w-3/4 mt-4'>{answer}</div>
                 :
                 <input type="text" id="disabled-input" aria-label="disabled input"  value={answer}
                 className="mb-5 w-fit text-center font-bold text-lg border rounded-lg block p-2.5 cursor-not-allowed dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-gray-400" disabled />
