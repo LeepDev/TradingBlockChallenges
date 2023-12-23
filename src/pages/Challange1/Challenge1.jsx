@@ -203,8 +203,8 @@ export default function Challenge1() {
       }
 
     return (
-    <div className="bg-gradient-to-b from-midnight-blue to-rgb(255,196,126) h-screen w-full flex-ctr-ctr flex-col">
-        <div style={{width: '100vh', padding: '10vh'}} className="flex-ctr-ctr flex-col border rounded-xl border-teal/10  bg-midnight-blue shadow-teal shadow-2xl">
+    <div className="bg-gradient-to-b from-midnight-blue to-rgb(255,196,126) h-screen w-full flex-ctr-ctr flex-col pt-16">
+        <div style={{width: '100vh', padding: '10vh'}} className="flex-ctr-ctr flex-col border rounded-xl border-teal/10  bg-midnight-blue shadow-teal shadow-2xl mt-10">
             <h1 className='text-white text-4xl font-bold pb-10'>Trading Block Challenge 1</h1>
 
             <div className='text-white text-2xl flex-ctr-ctr flex-col'>
