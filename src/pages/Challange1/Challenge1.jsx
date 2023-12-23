@@ -226,7 +226,7 @@ export default function Challenge1() {
                 <div className='text-center text-white font-bold w-3/4 mt-4'>{answer}</div>
                 :
                 <input type="text" id="disabled-input" aria-label="disabled input"  value={answer}
-                className="mb-5 w-fit text-center font-bold text-lg border rounded-lg block p-2.5 cursor-not-allowed dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-gray-400" disabled />
+                className="mb-5 w-fit text-center font-bold text-lg border rounded-lg block p-2.5 cursor-not-allowed dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" disabled />
             }
         </div>
     </div>
