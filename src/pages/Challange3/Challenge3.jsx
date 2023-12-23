@@ -111,7 +111,7 @@ export default function Challenge3() {
     <div className="bg-gradient-to-b from-midnight-blue to-rgb(255,196,126) h-screen w-full flex-ctr-ctr flex-col">
         {
             !isMobile && 
-            <div className="flex-ctr-ctr flex-col shadow-teal shadow-2xl rounded-xl bg-midnight-blue  border border-teal/10 p-10">
+            <div className="flex-ctr-ctr flex-col shadow-teal shadow-2xl rounded-xl bg-midnight-blue  border border-teal/10 p-10 mt-72">
                 <div className="relative overflow-x-auto">
                         <table className="text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 overflow-hidden">
                             <thead className="text-xs border-b dark:bg-midnight-blue dark:border-gray-700 dark:text-gray-600">
@@ -292,8 +292,8 @@ export default function Challenge3() {
                 </div>
             </>
         }
-        <button className='mt-10 text-white bg-teal hover:bg-teal/70 focus:outline-none focus:ring-4 focus:ring-teal font-medium rounded-full text-lg px-5 py-2.5 text-center me-2 mb-2' onClick={setUpStocks}>Set Stocks</button>
-        <button className='mt-10 text-white bg-teal hover:bg-teal/70 focus:outline-none focus:ring-4 focus:ring-teal font-medium rounded-full text-lg px-5 py-2.5 text-center me-2 mb-2' onClick={toggleCalls}>{timer ? "Stop Calls" : "Start Calls"}</button>
+        <button className='mt-10 text-white bg-teal hover:bg-teal/70 focus:outline-none focus:ring-4 focus:ring-teal font-medium rounded-full text-lg px-5 py-2.5 text-center me-2 mb-1' onClick={setUpStocks}>Set Stocks</button>
+        <button className='mt-2 text-white bg-teal hover:bg-teal/70 focus:outline-none focus:ring-4 focus:ring-teal font-medium rounded-full text-lg px-5 py-2.5 text-center me-2 mb-2' onClick={toggleCalls}>{timer ? "Stop Calls" : "Start Calls"}</button>
         
 
 
