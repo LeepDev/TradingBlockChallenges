@@ -2,6 +2,7 @@
 
 ## Useful Links
 * [Live Website](https://trading-block-challenges-2d51bd1413ca.herokuapp.com/)
+   * To get started, create a sign in and then login!
 * [Miro Board](https://miro.com/app/board/uXjVNEHOQ70=/)
 * [Financial Modeling Prep Market Data Source](https://site.financialmodelingprep.com/developer)
 * [Financial Modeling Prep Github for Node.js](https://github.com/patelneel55/financialmodelingprep)
