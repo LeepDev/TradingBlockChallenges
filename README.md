@@ -5,6 +5,8 @@
 * [Miro Board](https://miro.com/app/board/uXjVNEHOQ70=/)
 * [Financial Modeling Prep Market Data Source](https://site.financialmodelingprep.com/developer)
 * [Financial Modeling Prep Github for Node.js](https://github.com/patelneel55/financialmodelingprep)
+* [Tailwind](https://tailwindui.com/documentation)
+* [Flowbite](https://flowbite.com/docs/getting-started/introduction/)
 
 ## Trading Block Challenges
 * Displays landing page that allows user/client to access all 3 challenges
