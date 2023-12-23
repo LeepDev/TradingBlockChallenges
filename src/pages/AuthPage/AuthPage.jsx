@@ -5,7 +5,7 @@ import {useState} from 'react'
 export default function AuthPage({setUser}) {
     const [showSignUp, setSignUp] = useState(false)
     return (
-    <div className="bg-gradient-to-b from-midnight-blue to-rgb(255,196,126) h-screen w-full flex-ctr-ctr flex-col">
+    <div className="h-screen w-full flex flex-col items-center justify-start">
             {/* <h1 className="flex-ctr-ctr flex-col text-white font-bold pb-10">AuthPage</h1> */}
             {
                 showSignUp ? 
