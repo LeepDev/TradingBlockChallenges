@@ -75,7 +75,7 @@ export default function Challenge2Bonus() {
     return (
     <div className="bg-gradient-to-b from-midnight-blue to-rgb(255,196,126) h-screen w-full flex-ctr-ctr flex-col">
         <div className="flex flex-col items-center justify-start border border-teal/10 rounded-xl bg-midnight-blue shadow-teal shadow-2xl w-11/12 h-fit mt-10 py-10">
-            <h1 className='text-white md:text-4xl sm:text-3xl font-bold pb-10 text-2x1'>Trading Block Challenge 2</h1>
+            <h1 className='text-white md:text-4xl sm:text-3xl font-bold pb-10 text-2x1'>TradingBlock Challenge 2</h1>
 
             <br />
             

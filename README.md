@@ -1,4 +1,4 @@
-# Trading Block Challenges
+# TradingBlock Challenges
 
 ## Useful Links
 * [Live Website](https://trading-block-challenges-2d51bd1413ca.herokuapp.com/)
@@ -9,7 +9,7 @@
 * [Tailwind](https://tailwindui.com/documentation)
 * [Flowbite](https://flowbite.com/docs/getting-started/introduction/)
 
-## Trading Block Challenges
+## TradingBlock Challenges
 * Displays landing page that allows user/client to access all 3 challenges
 * uses custom styling
 
@@ -17,12 +17,12 @@
 ---
 
 
-### Trading Block Challenge 1 Requirements
+### TradingBlock Challenge 1 Requirements
 * Build a webpage displaying 2 inputs
 * input 1 - a number that will be used in a square root formula
 * input 2 - a number for precision (how many decimal places you would want to go. Defaulted to 0 if no input is set). May choose to be a pull down or a button (+/-).
 
-### Trading Block Challenge 1 MVP
+### TradingBlock Challenge 1 MVP
 * A webpage built in react
 * meets input requirements and calculates without use of libraries (aka uses only basic math)
 * test against this website (https://web2.0calc.com/)
@@ -31,7 +31,7 @@
 ---
 
 
-### Trading Block Challenge 2 Requirements
+### TradingBlock Challenge 2 Requirements
 * Build a webpage that displays prices of 3 stocks (MS, AAPL and AMZN).
     * Morgan Stanley
     * Apple
@@ -44,7 +44,7 @@
         * AMZN:  $120.00-160.00
 * Prices should update frequently (at most one second)
 
-### Trading Block Challenge 2 MVP
+### TradingBlock Challenge 2 MVP
 * A webpage built in react
 * meets requirements
 * updates frequently (at most one second)
@@ -55,7 +55,7 @@
 ---
 
 
-### Trading Block Challenge 3 Requirements
+### TradingBlock Challenge 3 Requirements
 * Build a webpage inspired by the styling of both of these websites
     * www.tradingblock.com
     * https://vt.tradingblock.com
@@ -64,15 +64,15 @@
     * https://site.financialmodelingprep.com/developer
 
 
-### Trading Block Challenge 3 MVP
+### TradingBlock Challenge 3 MVP
 * A webpage built in react
 * meets styling requirements
-* inspires the next change within Trading Block
+* inspires the next change within TradingBlock
 
 
 ---
 
-# Trading Block Challenge Prompts
+# TradingBlock Challenge Prompts
 
 1. You should build a simple web page that takes client’s input as number and calculates square root of it with precision to n decimal places where client selects the precision (could be from a pull down menu or a button or in other way).  When calculating the square root, you should not use any function call, library, or a third party function but rather calculate it using only operations of +, -, *, and /. 
  

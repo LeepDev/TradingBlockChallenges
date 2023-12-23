@@ -205,7 +205,7 @@ export default function Challenge1() {
     return (
     <div className="bg-gradient-to-b from-midnight-blue to-rgb(255,196,126) h-screen w-screen flex flex-col items-center justify-start pt-10">
         <div className="flex flex-col items-center justify-start border rounded-xl border-teal/10 w-11/12 h-fit bg-midnight-blue shadow-teal shadow-2xl mt-10 py-10">
-            <h1 className='text-white md:text-4xl sm:text-3xl font-bold pb-10 text-2x1'>Trading Block Challenge 1</h1>
+            <h1 className='text-white md:text-4xl sm:text-3xl font-bold pb-10 text-2x1'>TradingBlock Challenge 1</h1>
 
             <div className='text-white md:text-xl sm:text-lg text-base flex-ctr-ctr flex-col'>
                 What is the square root of<br/>

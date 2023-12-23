@@ -2,7 +2,7 @@ export default function ChallengeLP() {
     return (
     <div className="bg-gradient-to-b from-midnight-blue to-rgb(255,196,126) h-screen w-full flex flex-col items-center justify-start pt-10 overflow-y-auto">
         <div className="flex flex-col items-center justify-start rounded-xl bg-midnight-blue w-10/12 px-10 py-5 border border-teal/10 shadow-teal shadow-2xl">
-            <h1 className='text-white text-4xl font-bold'>Trading Block Challenge Prompts</h1>
+            <h1 className='text-white text-4xl font-bold'>TradingBlock Challenge Prompts</h1>
             <br/>
 
             <ol className='text-white list-decimal flex-ctr-ctr flex-col'>
