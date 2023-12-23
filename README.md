@@ -65,7 +65,7 @@
 ### Trading Block Challenge 3 MVP
 * A webpage built in react
 * meets styling requirements
-* inspires the next change withing Trading Block
+* inspires the next change within Trading Block
 
 
 ---
