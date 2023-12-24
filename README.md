@@ -61,7 +61,7 @@
     * https://vt.tradingblock.com
 * Add in quoted prices on it
 * BONUS: use real market data
-    * https://site.financialmodelingprep.com/developer
+    * https://site.financialmodelingprep.com/developer 
 
 
 ### TradingBlock Challenge 3 MVP
