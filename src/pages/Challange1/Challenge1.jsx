@@ -209,7 +209,7 @@ export default function Challenge1() {
 
             <div className='text-white md:text-xl sm:text-lg text-base flex-ctr-ctr flex-col'>
                 What is the square root of<br/>
-                <input className='text-black text-center font-bold block py-2.5 px-0 w-full text-lg bg-transparent border-0 border-b-2 appearance-none dark:text-white dark:border-white dark:focus:border-teal focus:outline-none focus:ring-0 focus:border-teal peer' ref={inputRef} style={{ width: inputWidth}} type="text" value={sqNumber} onKeyDown={clearInput} onChange={handleInputChangeSQ} />
+                <input className='text-black text-center font-bold block py-1.5 px-0 w-full rounded-md text-lg bg-gray-600 border-0 border-b-2 appearance-none dark:text-white dark:border-white dark:focus:border-teal focus:outline-none focus:ring-0 focus:border-teal peer' ref={inputRef} style={{ width: inputWidth}} type="text" value={sqNumber} onKeyDown={clearInput} onChange={handleInputChangeSQ} />
                 to the {decimal}th place?
                 <div className='flex-ctr-ctr p-2'>
                     <button className="text-white bg-teal hover:bg-teal/70 focus:outline-none focus:ring-4 focus:border-primary-600  font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2" onClick={handleInputChangeDecimalUp}>+</button>
