@@ -13,7 +13,7 @@ export default function Challenge3() {
         const randomTime = Math.random() * 1000 + 300;
 
         const randomStock = Math.floor(Math.random() * 3)
-        let element = symbolList[randomStock]
+        let element = Object.keys(quotes)[randomStock]
         if (quotes[element]) {
             const randomPriceChange = Math.random() * 1 - .5
             const prevClose = quotes[element].previousClose
@@ -60,6 +60,7 @@ export default function Challenge3() {
             handleStockCall(symbolList[i])
         }
     }
+
     
     async function handleStockCall(element) {
         let res = await getCurrentQuote(element)
@@ -94,8 +95,8 @@ export default function Challenge3() {
     }
 
     return (
-    <div className="bg-gradient-to-b from-midnight-blue to-rgb(255,196,126) h-screen w-full flex-ctr-ctr flex-col pb-10">
-            <div className='z-20 flex flex-col items-center p-10 xl:max-w-xl lg:max-w-md md:max-w-md max-w-sm'>
+    <div className="bg-gradient-to-b from-midnight-blue to-rgb(255,196,126) h-screen w-full flex-ctr-ctr flex-col pb-10 overflow-y-auto">
+            <div className='z-20 flex flex-col items-center pt-10 xl:max-w-xl lg:max-w-md md:max-w-md max-w-sm'>
                 <h1 className='text-white font-extralight text-6xl pb-5 text-center'>TradingBlock Challenge 3</h1>
                 <p className='text-white font-bold pb-2 text-center'>Simple to configure.  Powerful to use.  Endlessly customizable.</p>
                 <p className='text-white pb-2 text-center'>Take 60 seconds to open a risk-free virtual account and start putting your trading ideas into action.</p>
