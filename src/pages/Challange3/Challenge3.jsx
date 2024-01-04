@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { getCurrentQuote } from '../../utilities/fmp-service'
-import { useMediaQuery } from 'react-responsive';
 
 const DEFAULT_QUOTE = {
     "MS": {
@@ -421,8 +420,8 @@ export default function Challenge3() {
                 <button className='mt-2 text-white bg-teal hover:bg-teal/70 focus:outline-none focus:ring-4 focus:border-primary-600 font-medium rounded-full text-lg px-5 py-2.5 text-center me-2' onClick={toggleCalls}>{timer ? "Stop Calls" : "Start Calls"}</button>
             </div>
             <div className='flex fixed bottom-52'>
-                <div className='transform rotate-45 flex flex-row relative xl:-bottom-40 xl:-left-20 md:-bottom-[14.25] -bottom-52 -left-24'>
-                    <div className="rounded-lg dark:bg-midnight-blue shadow-2xl shadow-black m-1">
+                <div className='transform rotate-45 flex flex-row relative xl:-bottom-[11.5rem] xl:-left-20 md:-bottom-[16.25rem] -bottom-[16.25rem] -left-24'>
+                    <div className="rounded-lg dark:bg-midnight-blue shadow-2xl shadow-black m-2">
                         <table className="m-2 text-sm md:text-base lg:text-lg xl:text-xl text-gray-500 dark:text-gray-400 overflow-hidden">
                             <thead className=" border-b dark:border-gray-700 dark:text-gray-400">
                                 <tr>
@@ -471,13 +470,13 @@ export default function Challenge3() {
                                             <td className="px-6 py-4">
                                                 ${quote.dayLow.toFixed(2)}
                                             </td>
-                                            <td className={isNegative(quote.change.toFixed(2)) ? "px-6 py-4 text-red-600 transition-colors duration-300 ease-in-out w-10" : "px-6 py-4 text-teal transition-colors duration-300 ease-in-out w-10"}>
+                                            <td className={isNegative(quote.change.toFixed(2)) ? "text-center text-red-600 transition-colors duration-300 ease-in-out" : "text-center text-teal transition-colors duration-300 ease-in-out"}>
                                                 {isNegative(quote.change.toFixed(2)) ? "▼" + getChange(quote.change.toFixed(2)) : "▲+" + getChange(quote.change.toFixed(2))}
                                             </td>
-                                            <td className={isNegative(quote.change.toFixed(2)) ? "px-6 py-4 text-red-600 transition-colors duration-300 ease-in-out w-10" : "px-6 py-4 text-teal transition-colors duration-300 ease-in-out w-10"}>
+                                            <td className={isNegative(quote.change.toFixed(2)) ? "text-center text-red-600 transition-colors duration-300 ease-in-out" : "text-center text-teal transition-colors duration-300 ease-in-out"}>
                                                 {isNegative(quote.change.toFixed(2)) ? quote.changesPercentage.toFixed(2) : "+" + quote.changesPercentage.toFixed(2)}%
                                             </td>
-                                            <td className={upDown[element] && upDown[element] !== "equal" ? (upDown[element] === "up" ? "px-6 py-4 text-teal animate__animated animate__pulse transition-colors duration-300 ease-in-out w-10" : (upDown[element] === "down" ? "px-6 py-4 text-red-600 animate__animated animate__pulse transition-colors duration-300 ease-in-out w-10" : "px-6 py-4 text-white transition-colors duration-300 ease-in-out w-10")) : "px-6 py-4 text-white transition-colors duration-300 ease-in-out w-10"}>
+                                            <td className={upDown[element] && upDown[element] !== "equal" ? (upDown[element] === "up" ? "text-center text-teal animate__animated animate__pulse transition-colors duration-300 ease-in-out" : (upDown[element] === "down" ? "text-center text-red-600 animate__animated animate__pulse transition-colors duration-300 ease-in-out" : "text-center text-white transition-colors duration-300 ease-in-out")) : "text-center text-white transition-colors duration-300 ease-in-out"}>
                                                 ${quote.price.toFixed(2)}
                                             </td>
                                         </tr>
@@ -486,7 +485,7 @@ export default function Challenge3() {
                             </tbody>
                         </table>
                     </div>
-                    <div className="rounded-lg dark:bg-midnight-blue shadow-2xl shadow-black m-1">
+                    <div className="rounded-lg dark:bg-midnight-blue shadow-2xl shadow-black m-2">
                         <table className="m-2 text-sm md:text-base lg:text-lg xl:text-xl text-gray-500 dark:text-gray-400 overflow-hidden">
                             <thead className=" border-b dark:border-gray-700 dark:text-gray-400">
                                 <tr>
@@ -535,13 +534,13 @@ export default function Challenge3() {
                                             <td className="px-6 py-4">
                                                 ${quote.dayLow.toFixed(2)}
                                             </td>
-                                            <td className={upDown[element] && upDown[element] !== "equal" ? (upDown[element] === "up" ? "px-6 py-4 text-teal animate__animated animate__pulse transition-colors duration-300 ease-in-out w-10" : (upDown[element] === "down" ? "px-6 py-4 text-red-600 animate__animated animate__pulse transition-colors duration-300 ease-in-out w-10" : "px-6 py-4 text-white transition-colors duration-300 ease-in-out w-10")) : "px-6 py-4 text-white transition-colors duration-300 ease-in-out w-10"}>
+                                            <td className={upDown[element] && upDown[element] !== "equal" ? (upDown[element] === "up" ? "text-center text-teal animate__animated animate__pulse transition-colors duration-300 ease-in-out" : (upDown[element] === "down" ? "text-center text-red-600 animate__animated animate__pulse transition-colors duration-300 ease-in-out" : "text-center text-white transition-colors duration-300 ease-in-out")) : "text-center text-white transition-colors duration-300 ease-in-out"}>
                                                 ${quote.price.toFixed(2)}
                                             </td>
-                                            <td className={isNegative(quote.change.toFixed(2)) ? "px-6 py-4 text-red-600 transition-colors duration-300 ease-in-out w-10" : "px-6 py-4 text-teal transition-colors duration-300 ease-in-out w-10"}>
+                                            <td className={isNegative(quote.change.toFixed(2)) ? "text-center text-red-600 transition-colors duration-300 ease-in-out" : "text-center text-teal transition-colors duration-300 ease-in-out"}>
                                                 {isNegative(quote.change.toFixed(2)) ? "▼" + getChange(quote.change.toFixed(2)) : "▲+" + getChange(quote.change.toFixed(2))}
                                             </td>
-                                            <td className={isNegative(quote.change.toFixed(2)) ? "px-6 py-4 text-red-600 transition-colors duration-300 ease-in-out w-10" : "px-6 py-4 text-teal transition-colors duration-300 ease-in-out w-10"}>
+                                            <td className={isNegative(quote.change.toFixed(2)) ? "text-center text-red-600 transition-colors duration-300 ease-in-out" : "text-center text-teal transition-colors duration-300 ease-in-out"}>
                                                 {isNegative(quote.change.toFixed(2)) ? quote.changesPercentage.toFixed(2) : "+" + quote.changesPercentage.toFixed(2)}%
                                             </td>
                                         </tr>
@@ -551,8 +550,8 @@ export default function Challenge3() {
                         </table>
                     </div>
                 </div>
-                <div className='transform -rotate-45 flex flex-row relative xl:-bottom-[46rem] lg:-bottom-[46rem] md:-bottom-[43rem] -bottom-[40rem] xl:right-[35.5rem] lg:right-[31.50rem] md:right-[28.80rem] right-[26.25rem]'>
-                    <div className="rounded-lg dark:bg-midnight-blue shadow-2xl shadow-black m-1">
+                <div className='transform -rotate-45 flex flex-row relative xl:-bottom-[42.5rem] xl:right-[28rem] lg:right-[25rem] md:right-[25.75rem] -bottom-[45rem] right-[26.25rem]'>
+                    <div className="rounded-lg dark:bg-midnight-blue shadow-2xl shadow-black m-2">
                         <table className="m-2 text-xs md:text-sm lg:text-base xl:text-lg text-gray-500 dark:text-gray-400 overflow-hidden">
                             <thead className=" border-b dark:border-gray-700 dark:text-gray-400">
                                 <tr>
@@ -601,13 +600,13 @@ export default function Challenge3() {
                                             <td className="px-6 py-4">
                                                 ${quote.dayLow.toFixed(2)}
                                             </td>
-                                            <td className={isNegative(quote.change.toFixed(2)) ? "px-6 py-4 text-red-600 transition-colors duration-300 ease-in-out w-10" : "px-6 py-4 text-teal transition-colors duration-300 ease-in-out w-10"}>
+                                            <td className={isNegative(quote.change.toFixed(2)) ? "text-center text-red-600 transition-colors duration-300 ease-in-out" : "text-center text-teal transition-colors duration-300 ease-in-out"}>
                                                 {isNegative(quote.change.toFixed(2)) ? "▼" + getChange(quote.change.toFixed(2)) : "▲+" + getChange(quote.change.toFixed(2))}
                                             </td>
-                                            <td className={isNegative(quote.change.toFixed(2)) ? "px-6 py-4 text-red-600 transition-colors duration-300 ease-in-out w-10" : "px-6 py-4 text-teal transition-colors duration-300 ease-in-out w-10"}>
+                                            <td className={isNegative(quote.change.toFixed(2)) ? "text-center text-red-600 transition-colors duration-300 ease-in-out" : "text-center text-teal transition-colors duration-300 ease-in-out"}>
                                                 {isNegative(quote.change.toFixed(2)) ? quote.changesPercentage.toFixed(2) : "+" + quote.changesPercentage.toFixed(2)}%
                                             </td>
-                                            <td className={upDown[element] && upDown[element] !== "equal" ? (upDown[element] === "up" ? "px-6 py-4 text-teal animate__animated animate__pulse transition-colors duration-300 ease-in-out w-10" : (upDown[element] === "down" ? "px-6 py-4 text-red-600 animate__animated animate__pulse transition-colors duration-300 ease-in-out w-10" : "px-6 py-4 text-white transition-colors duration-300 ease-in-out w-10")) : "px-6 py-4 text-white transition-colors duration-300 ease-in-out w-10"}>
+                                            <td className={upDown[element] && upDown[element] !== "equal" ? (upDown[element] === "up" ? "text-center text-teal animate__animated animate__pulse transition-colors duration-300 ease-in-out" : (upDown[element] === "down" ? "text-center text-red-600 animate__animated animate__pulse transition-colors duration-300 ease-in-out" : "text-center text-white transition-colors duration-300 ease-in-out")) : "text-center text-white transition-colors duration-300 ease-in-out"}>
                                                 ${quote.price.toFixed(2)}
                                             </td>
                                         </tr>
@@ -616,7 +615,7 @@ export default function Challenge3() {
                             </tbody>
                         </table>
                     </div>
-                    <div className="rounded-lg dark:bg-midnight-blue shadow-2xl shadow-black m-1">
+                    <div className="rounded-lg dark:bg-midnight-blue shadow-2xl shadow-black m-2">
                         <table className="m-2 text-xs md:text-sm lg:text-base xl:text-lg text-gray-500 dark:text-gray-400 overflow-hidden">
                             <thead className=" border-b dark:border-gray-700 dark:text-gray-400">
                                 <tr>
@@ -653,13 +652,13 @@ export default function Challenge3() {
                                             <th scope="row" className="px-6 py-4 whitespace-nowrap dark:text-white">
                                                 {quote.symbol}
                                             </th>
-                                            <td className={upDown[element] && upDown[element] !== "equal" ? (upDown[element] === "up" ? "px-6 py-4 text-teal animate__animated animate__pulse transition-colors duration-300 ease-in-out w-10" : (upDown[element] === "down" ? "px-6 py-4 text-red-600 animate__animated animate__pulse transition-colors duration-300 ease-in-out w-10" : "px-6 py-4 text-white transition-colors duration-300 ease-in-out w-10")) : "px-6 py-4 text-white transition-colors duration-300 ease-in-out w-10"}>
+                                            <td className={upDown[element] && upDown[element] !== "equal" ? (upDown[element] === "up" ? "text-center text-teal animate__animated animate__pulse transition-colors duration-300 ease-in-out" : (upDown[element] === "down" ? "text-center text-red-600 animate__animated animate__pulse transition-colors duration-300 ease-in-out" : "text-center text-white transition-colors duration-300 ease-in-out")) : "text-center text-white transition-colors duration-300 ease-in-out"}>
                                                 ${quote.price.toFixed(2)}
                                             </td>
-                                            <td className={isNegative(quote.change.toFixed(2)) ? "px-6 py-4 text-red-600 transition-colors duration-300 ease-in-out w-10" : "px-6 py-4 text-teal transition-colors duration-300 ease-in-out w-10"}>
+                                            <td className={isNegative(quote.change.toFixed(2)) ? "text-center text-red-600 transition-colors duration-300 ease-in-out" : "text-center text-teal transition-colors duration-300 ease-in-out"}>
                                                 {isNegative(quote.change.toFixed(2)) ? "▼" + getChange(quote.change.toFixed(2)) : "▲+" + getChange(quote.change.toFixed(2))}
                                             </td>
-                                            <td className={isNegative(quote.change.toFixed(2)) ? "px-6 py-4 text-red-600 transition-colors duration-300 ease-in-out w-10" : "px-6 py-4 text-teal transition-colors duration-300 ease-in-out w-10"}>
+                                            <td className={isNegative(quote.change.toFixed(2)) ? "text-center text-red-600 transition-colors duration-300 ease-in-out" : "text-center text-teal transition-colors duration-300 ease-in-out"}>
                                                 {isNegative(quote.change.toFixed(2)) ? quote.changesPercentage.toFixed(2) : "+" + quote.changesPercentage.toFixed(2)}%
                                             </td>
                                             <td className="px-6 py-4">
